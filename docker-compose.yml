@@ -15,7 +15,7 @@ services:
       - mysql_data:/var/lib/mysql
 
   app:
-    image: 19db01940138
+    image: rihenhouli/events-project
     container_name: events_project
     depends_on:
       - mysql
