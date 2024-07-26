@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysqldb
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: eventsProject
+      MYSQL_USER: root
+      MYSQL_PASSWORD:
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  app:
+    image: 19db01940138
+    container_name: events_project
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/eventsProject
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD:
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysql_data:
