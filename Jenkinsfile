@@ -47,7 +47,7 @@ pipeline {
             steps {
                 script {
                     withSonarQubeEnv('sonarqube') { // Use the SonarQube environment
-                        sh './mvnw sonar:sonar -Dsonar.projectKey=your-project-key' // Replace 'your-project-key' with your actual project key
+                        sh './mvnw sonar:sonar -Dsonar.projectKey=devops-events-exam' // Replace 'your-project-key' with your actual project key
                     }
                 }
             }
