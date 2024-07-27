@@ -9,3 +9,5 @@ COPY target/eventsProject-1.0.0.jar /app/eventsProject-1.0.0.jar
 
 # Run the jar file
 ENTRYPOINT ["java", "-jar", "/app/eventsProject-1.0.0.jar"]
+
+EXPOSE 8089
