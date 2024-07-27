@@ -25,4 +25,4 @@ services:
       - "8080:8080"
 
 volumes:
-  mysql_data:
+  faf161ce77fd246522a2db37e83bb22990140d77ec59abe11b8a4f540bc1adaa:
