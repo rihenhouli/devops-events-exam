@@ -17,15 +17,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
 import java.util.*;
 
-@ExtendWith(SpringExtension.class)
-@SpringBootTest(classes = EventsProjectApplication.class)
+@ExtendWith(MockitoExtension.class)
 public class EventServicesImplTest {
 
     @Mock
@@ -42,7 +39,7 @@ public class EventServicesImplTest {
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(this);
+        // MockitoAnnotations.openMocks(this) is not needed with @ExtendWith(MockitoExtension.class)
     }
 
     @Test
@@ -124,6 +121,7 @@ public class EventServicesImplTest {
 
         assertNotNull(result);
         assertEquals(1, result.size());
+        assertTrue(result.contains(logistics));
         verify(eventRepository, times(1)).findByDateDebutBetween(startDate, endDate);
     }
 
@@ -140,6 +138,7 @@ public class EventServicesImplTest {
         when(eventRepository.findByParticipants_NomAndParticipants_PrenomAndParticipants_Tache("Tounsi", "Ahmed", Tache.ORGANISATEUR)).thenReturn(events);
         when(eventRepository.save(event)).thenReturn(event);
 
+        // Assuming `calculCout` method updates the event with the cost
         eventServices.calculCout();
 
         verify(eventRepository, times(1)).findByParticipants_NomAndParticipants_PrenomAndParticipants_Tache("Tounsi", "Ahmed", Tache.ORGANISATEUR);
