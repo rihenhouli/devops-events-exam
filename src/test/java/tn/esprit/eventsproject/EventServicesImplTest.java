@@ -13,16 +13,19 @@ import tn.esprit.eventsproject.repositories.ParticipantRepository;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import tn.esprit.eventsproject.services.EventServicesImpl;
 
 import java.time.LocalDate;
 import java.util.*;
 
-@SpringBootTest
+@ExtendWith(SpringExtension.class)
+@SpringBootTest(classes = EventsProjectApplication.class)
 public class EventServicesImplTest {
 
     @Mock
