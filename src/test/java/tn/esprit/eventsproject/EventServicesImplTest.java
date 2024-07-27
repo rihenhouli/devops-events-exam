@@ -10,6 +10,7 @@ import tn.esprit.eventsproject.entities.Tache;
 import tn.esprit.eventsproject.repositories.EventRepository;
 import tn.esprit.eventsproject.repositories.LogisticsRepository;
 import tn.esprit.eventsproject.repositories.ParticipantRepository;
+import tn.esprit.eventsproject.services.EventServicesImpl;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,7 +20,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import tn.esprit.eventsproject.services.EventServicesImpl;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -76,6 +76,7 @@ public class EventServicesImplTest {
     void testAddAffectEvenParticipantWithoutId() {
         Event event = new Event();
         Participant participant = new Participant();
+        participant.setIdPart(1);  // Ensure the participant has an ID
         participant.setEvents(new HashSet<>());
         Set<Participant> participants = new HashSet<>();
         participants.add(participant);
