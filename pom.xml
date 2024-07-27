@@ -20,6 +20,7 @@
     </scm>
     <properties>
         <java.version>1.8</java.version>
+        <sonar.login>sqa_3446b11191f1377a9b682199315551ed148fac27</sonar.login>
     </properties>
     <dependencies>
         <dependency>
