@@ -19,10 +19,10 @@
         <url>http://somerepository.com/view.cgi</url>
     </scm>
     <properties>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <sonar.login>sqa_3446b11191f1377a9b682199315551ed148fac27</sonar.login>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
@@ -116,8 +116,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.10.1</version>
                 <configuration>
-                    <source>17</source>
-                    <target>17</target>
+                    <source>21</source>
+                    <target>21</target>
                 </configuration>
             </plugin>
         </plugins>
