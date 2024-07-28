@@ -10,7 +10,7 @@
     </parent>
     <groupId>tn.esprit</groupId>
     <artifactId>eventsProject</artifactId>
-    <version>1.0.24</version>
+    <version>1</version>
     <name>eventsProject</name>
     <description>eventsProject</description>
     <scm>
@@ -21,6 +21,8 @@
     <properties>
         <java.version>17</java.version>
         <sonar.login>sqa_3446b11191f1377a9b682199315551ed148fac27</sonar.login>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
