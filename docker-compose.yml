@@ -31,8 +31,8 @@ services:
       - SONARQUBE_JDBC_USERNAME=root
       - SONARQUBE_JDBC_PASSWORD=
     ports:
-      - "9000:9097"
       - "9000:9999"
+      - "9000:9097"
     volumes:
       - sonarqube_data:/opt/sonarqube/data
       - sonarqube_logs:/opt/sonarqube/logs
